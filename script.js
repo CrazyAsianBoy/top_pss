@@ -31,9 +31,17 @@ const playRound=(playerSelection , computerSelection) => {
 
 }
 
+const game = () =>{
+    for (let i = 0; i < gameRound; i++){
+        playRound(playerSelection, computerSelection);
+    }
+    return `Player score : ${playerScore} , Computer score : ${computerScore}`;
+}
+
+let gameRound = 5;
 let playerScore = 0;
 let computerScore = 0;
 const computerInput = prompt("Pick paper, scissor, or rock : ");
 const playerSelection = computerInput.toLowerCase();
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(game());
