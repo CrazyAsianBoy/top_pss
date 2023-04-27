@@ -33,7 +33,7 @@ const playRound=(playerSelection , computerSelection) => {
 
 const game = () =>{
     for (let i = 0; i < gameRound; i++){
-        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
     }
     return `Player score : ${playerScore} , Computer score : ${computerScore}`;
 }
