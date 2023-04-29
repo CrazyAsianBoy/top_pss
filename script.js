@@ -39,7 +39,6 @@ const game = () =>{
         console.log(playRound(playerChoice, computerChoice));
         gameRound++;
     }
-    if(gameRound == 4){
         if(playerScore > computerScore){
             return `You win! Your score : ${playerScore} Computer score : ${computerScore}`;
         }else if (computerScore > playerScore){
@@ -47,7 +46,6 @@ const game = () =>{
         }else{
             return "It's a tie!"
         }
-    }
 }
 
 let gameRound = 0;
