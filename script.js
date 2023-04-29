@@ -32,9 +32,24 @@ const playRound=(playerSelection , computerSelection) => {
 }
 
 const game = () =>{
-    // for (let i = 0; i < gameRound; i++){
-    //     console.log(playRound(playerSelection, computerSelection));
-    // }
+    if (gameRound <= 5) {
+        for (let i = 0; i < gameRound; i++){
+            playRound();
+            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
+        }
+    } else {
+        if(computerScore > playerScore){
+            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
+            return "Computer Won!";
+        } else if(playerScore > computerScore) {
+            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
+            return "You Won!";
+        } else {
+            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
+            return "It's a tie";
+        }
+    }
+
 
     // do{
     //     gameRound++;
@@ -45,12 +60,6 @@ const game = () =>{
     //     playRound(playerSelection, computerSelection);
     //     gameRound++;
     // }
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    return `Player score : ${playerScore} , Computer score : ${computerScore}`;
 }
 
 let gameRound = 0;
