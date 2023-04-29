@@ -32,40 +32,25 @@ const playRound=(playerSelection , computerSelection) => {
 }
 
 const game = () =>{
-    if (gameRound <= 5) {
-        for (let i = 0; i < gameRound; i++){
-            playRound();
-            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
-        }
-    } else {
-        if(computerScore > playerScore){
-            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
-            return "Computer Won!";
-        } else if(playerScore > computerScore) {
-            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
-            return "You Won!";
-        } else {
-            console.log(`Player score : ${playerScore} , Computer score : ${computerScore}`);
-            return "It's a tie";
+    while(gameRound<5){
+        const computerChoice = getComputerChoice();
+        const playerInput = prompt("Pick paper, scissor, or rock : ");
+        const playerChoice = playerInput.toLowerCase();
+        console.log(playRound(playerChoice, computerChoice));
+        gameRound++;
+    }
+    if(gameRound == 4){
+        if(playerScore > computerScore){
+            return `You win! Your score : ${playerScore} Computer score : ${computerScore}`;
+        }else if (computerScore > playerScore){
+            return `You lose! Your score : ${playerScore} Computer score : ${computerScore}`;
+        }else{
+            return "It's a tie!"
         }
     }
-
-
-    // do{
-    //     gameRound++;
-    //     console.log(playRound(playerSelection, computerSelection));
-    // }
-    // while (gameRound<=5);
-    // while (gameRound<=5){
-    //     playRound(playerSelection, computerSelection);
-    //     gameRound++;
-    // }
 }
 
 let gameRound = 0;
 let playerScore = 0;
 let computerScore = 0;
-const computerInput = prompt("Pick paper, scissor, or rock : ");
-const playerSelection = computerInput.toLowerCase();
-const computerSelection = getComputerChoice();
 console.log(game());
