@@ -55,4 +55,5 @@ let computerScore = 0;
 let scissorEl = document.querySelector("button#scissor");
 let paperEl = document.querySelector("button#paper");
 let rockEl = document.querySelector("button#rock");
-console.log(playRound(playerChoice, computerChoice));
+let playerSelectObj = {scissorEl : "scissor", paperEl : "paper", rockEl : "rock"}; 
+console.log(playRound(playerChoice, getComputerChoice()));
