@@ -52,6 +52,10 @@ let gameRound = 0;
 let playerScore = 0;
 let computerScore = 0;
 // console.log(game());
+
+const buttonFunc = () => {
+    
+}
 let scissorEl = document.querySelector("button#scissor");
 let paperEl = document.querySelector("button#paper");
 let rockEl = document.querySelector("button#rock");
