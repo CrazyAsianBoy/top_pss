@@ -31,22 +31,22 @@ const playRound=(playerSelection , computerSelection) => {
 
 }
 
-const game = () =>{
-    while(gameRound<5){
-        const computerChoice = getComputerChoice();
-        const playerInput = prompt("Pick paper, scissor, or rock : ");
-        const playerChoice = playerInput.toLowerCase();
-        console.log(playRound(playerChoice, computerChoice));
-        gameRound++;
-    }
-        if(playerScore > computerScore){
-            return `You win! Your score : ${playerScore} Computer score : ${computerScore}`;
-        }else if (computerScore > playerScore){
-            return `You lose! Your score : ${playerScore} Computer score : ${computerScore}`;
-        }else{
-            return "It's a tie!"
-        }
-}
+// const game = () =>{
+//     while(gameRound<5){
+//         const computerChoice = getComputerChoice();
+//         const playerInput = prompt("Pick paper, scissor, or rock : ");
+//         const playerChoice = playerInput.toLowerCase();
+//         console.log(playRound(playerChoice, computerChoice));
+//         gameRound++;
+//     }
+//         if(playerScore > computerScore){
+//             return `You win! Your score : ${playerScore} Computer score : ${computerScore}`;
+//         }else if (computerScore > playerScore){
+//             return `You lose! Your score : ${playerScore} Computer score : ${computerScore}`;
+//         }else{
+//             return "It's a tie!"
+//         }
+// }
 
 let gameRound = 0;
 let playerScore = 0;
